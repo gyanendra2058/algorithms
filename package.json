@@ -1,0 +1,22 @@
+{
+  "name": "algoritms",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jasmine",
+    "test-cover": "istanbul cover --include-all-sources spec/support/specs.js && istanbul check-coverage"
+  },
+  "author": "Gyanendra Chaubey",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.4.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-node": "^1.16.2",
+    "jasmine-supertest": "^1.0.0",
+    "jasmine-ts-console-reporter": "^3.1.1",
+    "mocha": "^6.1.4",
+    "supertest": "^4.0.2"
+  }
+}
