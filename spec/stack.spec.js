@@ -5,9 +5,22 @@ describe('Stack test suite', () => {
         stack = new Stack();
     })
 
-    it('should push items properly', () => {
+    it('should push items', () => {
         stack.push('one');
         stack.push('two');
         expect(stack.peek()).toEqual('two');
+    });
+
+    it('should pop items', () => {
+        stack.push('one');
+        stack.push('two');
+        stack.push('three');
+        stack.pop();
+        expect(stack.peek()).toEqual('two');
+    });
+
+    it('should return undefined on popping empty stack', () => {
+        stack.pop();
+        expect(stack.peek()).toBeUndefined();
     });
 })
