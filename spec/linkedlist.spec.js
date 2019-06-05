@@ -12,18 +12,19 @@ describe("Linklist test suite", function () {
             newLinkedList.addEnd(5);
             newLinkedList.addEnd(15);
             newLinkedList.addEnd(25);
+            newLinkedList.addEnd(35);
         });
 
         it("should be able to add few elements", function () {
-            console.log(newLinkedList)
-            expect(newLinkedList.size).toEqual(4);
+            expect(newLinkedList.head.value).toEqual(10);
+            expect(newLinkedList.tail.value).toEqual(35);
+
         });
 
-        // it("should be able to print 3 added elements", function () {
-        //     spyOn(newLinkedList.head, 'toString');
-        //     newLinkedList.printItems();
-        //     expect(newLinkedList.head.toString).toHaveBeenCalledTimes(1);
-        // });
+        it("should be able to print added elements", function () {
+            var results = newLinkedList.toStringFormatted();
+            expect(results).toBe('10-5-15-25-35-null');
+        });
          
     })
     

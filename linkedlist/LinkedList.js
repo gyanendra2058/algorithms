@@ -4,17 +4,18 @@ class LinkedList {
 
     constructor(headValue) {
         this.head = new LLNode(headValue);
-        this.size = 1;
+        this.tail = this.head;
     }
 
     addEnd(llNodeValue) {
         let currentPointer = this.head;
-        while (currentPointer.next != undefined) {
+        let nodeAdded = new LLNode(llNodeValue);
+
+        while (currentPointer.next !== undefined) {
             currentPointer = currentPointer.next;
         }
-        let nodeAdded = new LLNode(llNodeValue);
         currentPointer.next = nodeAdded;
-        this.size++;
+        this.tail = nodeAdded;
     }
 
     addStart(llNode) {
@@ -25,12 +26,16 @@ class LinkedList {
 
     }
 
-    printItems() {
+    toStringFormatted() {
+        let llString = '';
         let cp = this.head;
-        while (cp.next != undefined) {
-            cp.toString();
+        while (cp.next !== undefined) {
+            llString = llString.concat(cp.value, '-');
             cp = cp.next;
         }
+
+        llString = llString.concat(this.tail.value, '-null');
+        return llString.trim();
     }
 }
 module.exports = LinkedList;
