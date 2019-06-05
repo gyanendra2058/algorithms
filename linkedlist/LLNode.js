@@ -5,7 +5,7 @@ class LLNode {
     }
 
     toString(){
-        console.log('[Item value, Next]', '[', this.value, ',',  this.next, ']');
+        console.log(this.value, '->',  (this.next !== undefined) ? this.next.value : 'null');
     }
 }
 

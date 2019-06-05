@@ -1,14 +1,30 @@
 
 var LinkedList = require('../linkedlist/LinkedList');
-require('jasmine');
+var LLNode = require('../linkedlist/LLNode');
 
-describe("Test suite", function () {
-    describe("Test suite", function(){
-        it("contains spec with an expectation", function () {
-            var newLinkedList = new LinkedList(10);
+describe("Linklist test suite", function () {
+    
+    describe("Add behaviour ", function(){
+        var newLinkedList;
+
+        beforeEach(function() {
+            newLinkedList = new LinkedList(10);
             newLinkedList.addEnd(5);
-            expect(newLinkedList.size).toEqual(2);
+            newLinkedList.addEnd(15);
+            newLinkedList.addEnd(25);
         });
+
+        it("should be able to add few elements", function () {
+            console.log(newLinkedList)
+            expect(newLinkedList.size).toEqual(4);
+        });
+
+        // it("should be able to print 3 added elements", function () {
+        //     spyOn(newLinkedList.head, 'toString');
+        //     newLinkedList.printItems();
+        //     expect(newLinkedList.head.toString).toHaveBeenCalledTimes(1);
+        // });
+         
     })
     
 });

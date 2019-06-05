@@ -8,29 +8,28 @@ class LinkedList {
     }
 
     addEnd(llNodeValue) {
-        let currentPointer = this.head.next;
-        if(currentPointer=== undefined){
-            this.head.next = new LLNode(llNodeValue);
-            this.size++;
-        } else {
-            while(this.head.next !== undefined){
-                addEnd(this.head.next);
-            }
+        let currentPointer = this.head;
+        while (currentPointer.next != undefined) {
+            currentPointer = currentPointer.next;
         }
+        let nodeAdded = new LLNode(llNodeValue);
+        currentPointer.next = nodeAdded;
+        this.size++;
     }
 
-    addStart(llNode){
+    addStart(llNode) {
 
     }
 
-    delete(nodeValue){
+    delete(nodeValue) {
 
     }
 
-    printItems(){
-        while(this.head !== undefined){
-            this.head.toString();
-            this.head = this.head.next;
+    printItems() {
+        let cp = this.head;
+        while (cp.next != undefined) {
+            cp.toString();
+            cp = cp.next;
         }
     }
 }
