@@ -17,9 +17,9 @@
     "jasmine-supertest": "^1.0.0",
     "jasmine-ts-console-reporter": "^3.1.1",
     "mocha": "^6.1.4",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "lodash": "4.17.11"
   },
-
   "engines": {
     "node": ">=11.0.0",
     "npm": ">=6.0.0"
