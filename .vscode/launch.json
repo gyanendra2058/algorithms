@@ -10,7 +10,7 @@
             "name": "Jasmine Individual Test", 
             "program": "${workspaceRoot}\\node_modules\\jasmine\\bin\\jasmine.js", 
             "args": [ 
-                "spec\\cracking_coding_spec\\1.2.spec.js" 
+                "spec\\cracking_coding_spec\\*.spec.js" 
             ], 
             "env": { 
                 "NODE_PATH": "." 

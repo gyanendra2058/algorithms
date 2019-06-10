@@ -18,14 +18,6 @@ class LinkedList {
         this.tail = nodeAdded;
     }
 
-    addStart(llNode) {
-
-    }
-
-    delete(nodeValue) {
-
-    }
-
     toStringFormatted() {
         let llString = '';
         let cp = this.head;
