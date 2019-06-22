@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/gyanendra2058/algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/gyanendra2058/algorithms)
+
 Algorithms learning repo
 --------------------------
 a. Repo install: npm i
