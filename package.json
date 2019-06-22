@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "istanbul cover --include-all-sources spec/support/specs.js && istanbul check-coverage"
+    "test": "istanbul cover --include-all-sources spec/support/specs.js && istanbul check-coverage && codecov"
   },
   "author": "Gyanendra Chaubey",
   "license": "MIT",
