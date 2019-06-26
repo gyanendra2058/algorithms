@@ -5,7 +5,7 @@ Algorithms learning repo
 --------------------------
 a. Repo install: npm i
 
-b. Run tests: npm run test-cover
+b. Run tests: npm run test
 
 c. Test coverage report location: ~/coverage/lcov-report/index.html
 
