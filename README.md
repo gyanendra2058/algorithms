@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/gyanendra2058/algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/gyanendra2058/algorithms)
+[![Build Status](https://travis-ci.org/gyanendra2058/algorithms.svg?branch=master)](https://travis-ci.org/gyanendra2058/algorithms)
 
 Algorithms learning repo
 --------------------------
