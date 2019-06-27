@@ -61,4 +61,31 @@ describe('Graph test suite', () => {
         let result = "|1: 2| |2: 3,1| |3: 2|";
         expect(graph.toString()).toBe(result);
     });
+
+    describe('directed graph', () => {
+        var directedGraph;
+        beforeEach(() => {
+            directedGraph = new Graph('directed');
+            directedGraph.addNode(1);
+            directedGraph.addNode(2);
+            directedGraph.addNode(3);
+            directedGraph.addNode(4);
+            directedGraph.addEdge(1,3);
+            directedGraph.addEdge(2,3);
+            directedGraph.addEdge(1,2);
+            directedGraph.addEdge(2,4);
+            directedGraph.addEdge(4,3);
+        })
+        it('should add only edge is the list from node1 to node2', () => {
+            let result = "|1: 3,2| |2: 3,4| |3: | |4: 3|";
+            expect(directedGraph.toString()).toBe(result);
+        });
+
+        it('should remove edge only from node1 to node2 not vice-versa', () => {
+            directedGraph.removeEdge(1,2);
+            directedGraph.removeEdge(2,4);
+            let result = "|1: 3| |2: 3| |3: | |4: 3|";
+            expect(directedGraph.toString()).toBe(result);
+        });
+    })
 })
