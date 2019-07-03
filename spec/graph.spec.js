@@ -87,5 +87,20 @@ describe('Graph test suite', () => {
             let result = "|1: 3| |2: 3| |3: | |4: 3|";
             expect(directedGraph.toString()).toBe(result);
         });
+
+        xit('should check the route exists between nodes', () => {
+            directedGraph.addNode(5);
+            directedGraph.addNode(6);
+            directedGraph.addNode(7);
+            directedGraph.addEdge(4,5);
+            directedGraph.addEdge(6,5);
+            directedGraph.addEdge(7,5);
+            directedGraph.addEdge(7,4);
+
+            let result = "|1: 3,2| |2: 3,4| |3: | |4: 3,5| |5: | |6: 5| |7: 5,4|";
+            expect(directedGraph.toString()).toBe(result);
+            expect(directedGraph.routeExists(2,6)).toBe(false);
+            //expect(directedGraph.routeExists(1,5)).toBe(true);
+        })
     })
 })

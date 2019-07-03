@@ -11,6 +11,7 @@
             "program": "${workspaceRoot}\\node_modules\\jasmine\\bin\\jasmine.js", 
             "args": [ 
                 "spec\\cracking_coding_spec\\*.spec.js",
+                "spec\\cracking_coding_spec\\*\\*.spec.js",
                 "spec\\*.spec.js" 
             ], 
             "env": { 

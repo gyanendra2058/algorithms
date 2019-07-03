@@ -1,0 +1,13 @@
+a. Should calculate the expoenent of a value
+b. Given a multi-dimensional integer array, return the total number of integers stored inside this array
+c. Write a function called sumRange. It will take a number and return the sum of all numbers from 1 up to the number passed in.
+Sample: sumRange(3) returns 6, since 1 + 2 + 3 = 6.
+
+d. Check all values in an array
+Write a function called all which accepts an array and a callback and returns true if every value in the array returns true when passed as parameter to the callback function
+Sample: var allAreLessThanSeven = all([1,2,9], function(num){
+	return num < 7;
+})();
+
+console.log(allAreLessThanSeven); // false
+

@@ -60,5 +60,22 @@ class Graph {
         });
         return graphString.trim();
     }
+    /**
+     * @param  {any} node1
+     * @param  {any} node2
+     * @return {Boolean} if any route exits b/w node1 amd node2
+     */
+    // routeExists(node1Value, node2Value) {
+    //     let result = false;
+    //     let node1 = this._storage.get(node1Value);
+    //     if (node1.edges.includes(node2Value)) {
+    //         result = true;
+    //         return result;
+    //     } else { // Traverse every connected vertex in a BFS way
+    //             // node1.edges = node1.edges.splice(0,1);
+    //             return result || this.routeExists(node1.edges.splice(0,1), node2Value);
+            
+    //     }
+    // }
 }
 module.exports = Graph;
