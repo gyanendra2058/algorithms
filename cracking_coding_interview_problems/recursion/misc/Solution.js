@@ -1,7 +1,5 @@
 class Solution {
-    constructor() {
-        this.count = 0;
-    }
+    constructor() {}
 
     // Solution to problem a.
     exponent(power, num) {
@@ -21,20 +19,6 @@ class Solution {
         }
     }
 
-    // Solution to problem b.
-    totalIntegers(mdArray) {
-        
-        for (let i = 0; i < mdArray.length; i++) {
-            if (Array.isArray(mdArray[i])) {
-                return this.totalIntegers(mdArray[i]);
-            } else {
-                this.count += Number.isInteger(mdArray[i]) ? 1 : 0;
-            }
-        }
-        return this.count;
-    }
-
-
     // Solution to problem d
     all(arr, cb) {
         if (arr.length === 1) {
@@ -50,6 +34,28 @@ class Solution {
             return arr[0];
         } else
             return arr.shift() * this.productOfArray(arr);
+    }
+
+    contains(nestedObj, value) {
+        let keys = Object.keys(nestedObj);
+        if (keys.length === 0) {
+            return false;
+        } else if (nestedObj[keys[0]] == value) {
+            return true;
+        } else {
+            return this.contains(nestedObj[keys[0]], value);
+        }
+    }
+
+    // Solution to problem b
+    totalIntegers(mdArray) {
+        if (Number.isInteger(mdArray)) {
+            return 1;
+        } else if (mdArray.length === 0 || (typeof mdArray === 'string')) {
+            return 0;
+        } else {
+            return this.totalIntegers(mdArray.shift()) + this.totalIntegers(mdArray);
+        }
     }
 }
 

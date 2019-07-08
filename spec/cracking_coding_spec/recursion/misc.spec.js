@@ -17,15 +17,34 @@ describe('misc test suite', () => {
 
   it('should test all function', () => {
     let cbFn = num => num < 7;
-    expect(solution.all([1,2,6], cbFn)).toBe(true);
-    expect(solution.all([1,2,9], cbFn)).toBe(false);
+    expect(solution.all([1, 2, 6], cbFn)).toBe(true);
+    expect(solution.all([1, 2, 9], cbFn)).toBe(false);
   });
 
   it('should test productOfArray', () => {
-    expect(solution.productOfArray([1,2,3,10])).toBe(60);
+    expect(solution.productOfArray([1, 2, 3, 10])).toBe(60);
   });
 
-  xit('should test totalIntegers', () => {
-    expect(solution.totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]])).toBe(7)
-  })
+  it('should test totalIntegers', () => {
+    expect(solution.totalIntegers([[[5], 3], 0, 2, ['foo'],[],[4, [5, 6]]])).toBe(7)
+  });
+
+  it('should test nested object', () => {
+    var nestedObject = {
+      data: {
+        info: {
+          stuff: {
+            thing: {
+              moreStuff: {
+                magicNumber: 44
+              }
+            }
+          }
+        }
+      }
+    };
+    expect(solution.contains(nestedObject, 44)).toBe(true);
+    expect(solution.contains(nestedObject, "foo")).toBe(false);
+  });
+
 });
