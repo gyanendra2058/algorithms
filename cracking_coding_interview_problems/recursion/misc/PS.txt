@@ -1,3 +1,5 @@
+https://www.codingame.com/playgrounds/5422/js-interview-prep-recursion
+
 a. Should calculate the expoenent of a value
 b. Given a multi-dimensional integer array, return the total number of integers stored inside this array
 c. Write a function called sumRange. It will take a number and return the sum of all numbers from 1 up to the number passed in.
@@ -10,4 +12,19 @@ Sample: var allAreLessThanSeven = all([1,2,9], function(num){
 })();
 
 console.log(allAreLessThanSeven); // false
+
+
+e. Write a function that sums squares of numbers in list that may contain more lists
+var l = [1,2,3]; 
+console.log(SumSquares(l)); // 1 + 4 + 9 = 14
+
+l = [[1,2],3]; 
+console.log(SumSquares(l)); // 1 + 4 + 9 = 14
+
+l = [[[[[[[[[1]]]]]]]]] 
+console.log(SumSquares(l)); // 1 = 1
+
+l = [10,[[10],10],[10]] 
+console.log(SumSquares(l)); // 100 + 100 + 100 + 100 = 400
+
 

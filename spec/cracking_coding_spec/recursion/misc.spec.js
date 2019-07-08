@@ -47,4 +47,11 @@ describe('misc test suite', () => {
     expect(solution.contains(nestedObject, "foo")).toBe(false);
   });
 
+  it('should test sum of sqaures of a mix elements in a mdarray', () => {
+    expect(solution.sumSquares([1,2,3])).toBe(14);
+    expect(solution.sumSquares([[1,2],3])).toBe(14);
+    expect(solution.sumSquares([[[[[[[[[1]]]]]]]]])).toBe(1);
+    expect(solution.sumSquares([10,[[10],10],[10]])).toBe(400);
+  })
+
 });

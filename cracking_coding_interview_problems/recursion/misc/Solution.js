@@ -57,6 +57,17 @@ class Solution {
             return this.totalIntegers(mdArray.shift()) + this.totalIntegers(mdArray);
         }
     }
+
+    // Solution to problem e
+    sumSquares(mdArray) {
+        if (Number.isInteger(mdArray)) {
+            return mdArray * mdArray;
+        } else if (mdArray.length === 0) {
+            return 0;
+        } else {
+            return this.sumSquares(mdArray.shift()) + this.sumSquares(mdArray);
+        }
+    }
 }
 
 module.exports = Solution;
