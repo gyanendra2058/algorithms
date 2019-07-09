@@ -68,6 +68,28 @@ class Solution {
             return this.sumSquares(mdArray.shift()) + this.sumSquares(mdArray);
         }
     }
+
+    // Solution to problem f
+    replicate(times, number) {
+        if (times <= 0) {
+            return [];
+        } else {
+            return this.replicate(times - 1, number).concat(number);
+        }
+    }
+
+    // Solution to flatten array
+    flattenArray(array) {
+        if(!Array.isArray(array)) {
+            return [array];
+        } else if(array.length === 0) {
+            return [];
+        } else {
+            let firstElement = this.flattenArray(array.shift());
+            let remainingArray = this.flattenArray(array);
+            return firstElement.concat(remainingArray);
+        }
+    }
 }
 
 module.exports = Solution;

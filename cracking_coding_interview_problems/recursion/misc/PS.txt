@@ -27,4 +27,16 @@ console.log(SumSquares(l)); // 1 = 1
 l = [10,[[10],10],[10]] 
 console.log(SumSquares(l)); // 100 + 100 + 100 + 100 = 400
 
+f. The function should return an array containing repetitions of the number argument. For instance, replicate(3, 5) should return [5,5,5]. If the times argument is negative, return an empty array.
+
+console.log(replicate(3, 5)) // [5, 5, 5]
+console.log(replicate(1, 69)) // [69]
+console.log(replicate(-2, 6)) // []
+
+g. Flatten a nested array.
+  [1, [2, 3], 4, [5, 6, [7, 8], 9]] -> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+ 
+
+
 

@@ -52,6 +52,19 @@ describe('misc test suite', () => {
     expect(solution.sumSquares([[1,2],3])).toBe(14);
     expect(solution.sumSquares([[[[[[[[[1]]]]]]]]])).toBe(1);
     expect(solution.sumSquares([10,[[10],10],[10]])).toBe(400);
+  });
+
+  it('should replicate the number given times', () => {
+    expect(solution.replicate(3,5)).toEqual([5, 5, 5]);
+    expect(solution.replicate(1,69)).toEqual([69]);
+    expect(solution.replicate(-2,6)).toEqual([]);
+  })
+
+  it('should flatten a nested array', () => {
+    expect(solution.flattenArray([1, [2, 3], 4, [5, 6, [7, 8], 9]])).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    expect(solution.flattenArray([0, 1, [2, [3, 4]]])).toEqual([0, 1, 2, 3, 4]);
+    expect(solution.flattenArray([[[[]]]])).toEqual([]);
+    expect(solution.flattenArray([[[[[1]]]]])).toEqual([1]);
   })
 
 });
