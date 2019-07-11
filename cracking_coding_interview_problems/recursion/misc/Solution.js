@@ -80,14 +80,37 @@ class Solution {
 
     // Solution to flatten array
     flattenArray(array) {
-        if(!Array.isArray(array)) {
+        if (!Array.isArray(array)) {
             return [array];
-        } else if(array.length === 0) {
+        } else if (array.length === 0) {
             return [];
         } else {
             let firstElement = this.flattenArray(array.shift());
             let remainingArray = this.flattenArray(array);
             return firstElement.concat(remainingArray);
+        }
+    }
+
+    // Solution to palindrome problem
+    palindrome(string) {
+        if (string.length > 3 && string.charAt(0) !== string.charAt(string.length - 1)) {
+            return false;
+        } else if (string.length <= 3) {
+            if (string.charAt(0) === string.charAt(string.length - 1)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return this.palindrome(string.slice(1, -1));
+        }
+    }
+
+    modulo(number, divisor) {
+        if((number -divisor) < divisor) {
+            return number - divisor;
+        } else {
+            return this.modulo((number - divisor), divisor);
         }
     }
 }

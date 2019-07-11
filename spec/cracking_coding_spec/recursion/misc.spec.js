@@ -65,6 +65,21 @@ describe('misc test suite', () => {
     expect(solution.flattenArray([0, 1, [2, [3, 4]]])).toEqual([0, 1, 2, 3, 4]);
     expect(solution.flattenArray([[[[]]]])).toEqual([]);
     expect(solution.flattenArray([[[[[1]]]]])).toEqual([1]);
+  });
+
+  it('should test palindrome', () => {
+    expect(solution.palindrome('abcd')).toBe(false);
+    expect(solution.palindrome('abba')).toBe(true);
+    expect(solution.palindrome('abcba')).toBe(true);
+    expect(solution.palindrome('plokaolp')).toBe(false);
+
+  });
+
+  it('should find modulo without % operator', () => {
+    expect(solution.modulo(5,2)).toEqual(1);
+    expect(solution.modulo(17,5)).toEqual(2);
+    expect(solution.modulo(22,6)).toEqual(4);
+    expect(solution.modulo(24,6)).toEqual(0);
   })
 
 });

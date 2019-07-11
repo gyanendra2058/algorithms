@@ -36,6 +36,14 @@ console.log(replicate(-2, 6)) // []
 g. Flatten a nested array.
   [1, [2, 3], 4, [5, 6, [7, 8], 9]] -> [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+h.  Write a function that determines if a string is a palindrome.
+
+i. Write a function that returns the remainder of x divided by y without using the
+// modulo (%) operator.
+// modulo(5,2) // 1
+// modulo(17,5) // 2
+// modulo(22,6) // 4
+
  
 
 
