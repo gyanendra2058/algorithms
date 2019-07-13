@@ -80,6 +80,34 @@ describe('misc test suite', () => {
     expect(solution.modulo(17,5)).toEqual(2);
     expect(solution.modulo(22,6)).toEqual(4);
     expect(solution.modulo(24,6)).toEqual(0);
+  });
+
+  it('should reverse an array', () => {
+    expect(solution.reverseArray([1,2,3,4])).toEqual([4,3,2,1]);
+  });
+
+  it('should stringifyNumbers', () => {
+    expect(solution.stringifyNumbers({
+      num: 1,
+      test: [],
+      data: {
+          val: 4,
+          info: {
+              isRight: true,
+              random: 66
+          }
+      }
+  })).toEqual({
+      num: "1",
+      test: [],
+      data: {
+          val: "4",
+          info: {
+              isRight: true,
+              random: "66"
+          }
+      }
+  });
   })
 
 });

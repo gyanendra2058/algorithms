@@ -107,12 +107,40 @@ class Solution {
     }
 
     modulo(number, divisor) {
-        if((number -divisor) < divisor) {
+        if ((number - divisor) < divisor) {
             return number - divisor;
         } else {
             return this.modulo((number - divisor), divisor);
         }
     }
+
+    reverseArray(array) {
+        if (array.length === 1) {
+            return [array[0]]
+        } else {
+            let firstElement = array.shift();
+            let remainingArray = array;
+            return this.reverseArray(remainingArray).concat(firstElement);
+        }
+    }
+
+
+    /**
+     * @param  {} obj
+     */
+    stringifyNumbers(obj) {
+        let keys = Object.keys(obj);
+        for (let i = 0; i < keys.length; i++) {
+            let subElement = obj[keys[i]];
+            if (Number.isInteger(subElement)) {
+                obj[keys[i]] = subElement.toString();
+            } else {
+                this.stringifyNumbers(subElement);
+            }
+        }
+        return obj;
+    }
+
 }
 
 module.exports = Solution;
