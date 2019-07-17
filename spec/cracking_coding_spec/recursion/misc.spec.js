@@ -110,4 +110,13 @@ describe('misc test suite', () => {
   });
   })
 
+  it('should build list', () => {
+    expect(solution.buildList(0,5)).toEqual([0,0,0,0,0]);
+    expect(solution.buildList(7,3)).toEqual([7,7,7]);
+  })
+
+  it('shpuld test fizbuzz', () => {
+    expect(solution.fizzBuzz(5)).toEqual(['1','2','Fizz','4','Buzz']);
+  })
+
 });

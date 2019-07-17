@@ -140,6 +140,29 @@ class Solution {
         }
         return obj;
     }
+    
+    buildList(value, length) {
+        if(length === 0) {
+            return [];
+        } else {
+            return this.buildList(value, length -1).concat(value);
+        }
+    }
+
+    fizzBuzz(n) {
+        if(n === 0) {
+            return [];
+        }
+        else if(n % 3 === 0) {
+            return this.fizzBuzz(n -1).concat('Fizz');
+        } else if(n % 5 === 0) {
+            return this.fizzBuzz(n -1).concat('Buzz');
+        } else if(n % 15 === 0) {
+            return this.fizzBuzz(n -1).concat('FizzBuzz');
+        } else {
+            return this.fizzBuzz(n -1).concat(n.toString());
+        }
+    }
 
 }
 
