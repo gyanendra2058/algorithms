@@ -1,5 +1,8 @@
 class Solution {
-    constructor() {}
+    constructor() {
+        this.keysCount = 0;
+        this.valueCount = 0;
+    }
 
     // Solution to problem a.
     exponent(power, num) {
@@ -140,30 +143,73 @@ class Solution {
         }
         return obj;
     }
-    
+
     buildList(value, length) {
-        if(length === 0) {
+        if (length === 0) {
             return [];
         } else {
-            return this.buildList(value, length -1).concat(value);
+            return this.buildList(value, length - 1).concat(value);
         }
     }
 
     fizzBuzz(n) {
-        if(n === 0) {
+        if (n === 0) {
             return [];
-        }
-        else if(n % 3 === 0) {
-            return this.fizzBuzz(n -1).concat('Fizz');
-        } else if(n % 5 === 0) {
-            return this.fizzBuzz(n -1).concat('Buzz');
-        } else if(n % 15 === 0) {
-            return this.fizzBuzz(n -1).concat('FizzBuzz');
+        } else if (n % 3 === 0) {
+            return this.fizzBuzz(n - 1).concat('Fizz');
+        } else if (n % 5 === 0) {
+            return this.fizzBuzz(n - 1).concat('Buzz');
+        } else if (n % 15 === 0) {
+            return this.fizzBuzz(n - 1).concat('FizzBuzz');
         } else {
-            return this.fizzBuzz(n -1).concat(n.toString());
+            return this.fizzBuzz(n - 1).concat(n.toString());
         }
     }
 
+    countOccurrence(array, value) {
+        if (array.length === 0) {
+            return 0;
+        } else if (array[0] === value) {
+            return 1 + this.countOccurrence(array.slice(1), value);
+        } else {
+            return 0 + this.countOccurrence(array.slice(1), value)
+        }
+    }
+
+    rMap(array, cb) {
+        if (array.length == 0) {
+            return [];
+        } else {
+            var val = cb(array[0]);
+            return [val].concat(this.rMap(array.slice(1), cb));
+        }
+    }
+
+    countKeysInObj(obj, val) {
+        var keys = Object.keys(obj);
+
+        for (let i = 0; i < keys.length; i++) {
+            if (keys[i] === val) {
+                this.keysCount++;
+            }
+            if (typeof obj[keys[i]] === 'object') {
+                this.countKeysInObj(obj[keys[i]], val);
+            }
+        }
+    }
+
+    countValuesInObj(obj, val) {
+        var keys = Object.keys(obj);
+
+        for (let i = 0; i < keys.length; i++) {
+            if (obj[keys[i]] === val) {
+                this.valueCount++;
+            }
+            if (typeof obj[keys[i]] === 'object') {
+                this.countValuesInObj(obj[keys[i]], val);
+            }
+        }
+    }
 }
 
 module.exports = Solution;

@@ -115,8 +115,34 @@ describe('misc test suite', () => {
     expect(solution.buildList(7,3)).toEqual([7,7,7]);
   })
 
-  it('shpuld test fizbuzz', () => {
+  it('should test fizbuzz', () => {
     expect(solution.fizzBuzz(5)).toEqual(['1','2','Fizz','4','Buzz']);
   })
+
+  it('should count the occurence of a value in a list ', () => {
+    expect(solution.countOccurrence([2,7,4,4,1,4], 4)).toBe(3);
+    expect(solution.countOccurrence([2,'banana',4,4,1,'banana'], 'banana')).toBe(2);
+    expect(solution.countOccurrence([2,'banana',4,4,1,'banana'], 'foo')).toBe(0);
+  })
+
+  it('should write a recursive version of map function', () => {
+    var timesTwo = i => i*2;
+    var square = i => i*i;
+    expect(solution.rMap([1,2,3], timesTwo)).toEqual([2,4,6]);
+    expect(solution.rMap([1,2,3], square)).toEqual([1,4,9]);
+  })
+
+  it('should counts the number of times a key occurs in an object', () => {
+    var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
+    solution.countKeysInObj(obj, 'e');
+    expect(solution.keysCount).toBe(2);
+  })
+
+  it('should counts the number of times a value occurs in an object', () => {
+    var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
+    solution.countValuesInObj(obj, 'r');
+    expect(solution.valueCount).toBe(2);
+  })
+  
 
 });
