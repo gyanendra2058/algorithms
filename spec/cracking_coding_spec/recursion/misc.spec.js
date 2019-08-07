@@ -143,6 +143,11 @@ describe('misc test suite', () => {
     solution.countValuesInObj(obj, 'r');
     expect(solution.valueCount).toBe(2);
   })
-  
 
+  it('should test if the array is sorted', () => {
+    expect(solution.isArraySorted([1,2,3,4,5,6])).toBe(true);
+    expect(solution.isArraySorted([1,2,3,4,5,6,7,8,9])).toBe(true);
+    expect(solution.isArraySorted([1,2,3,7,8,5,16,22,27,29,32,41,45,47,55])).toBe(false);
+  })
+  
 });

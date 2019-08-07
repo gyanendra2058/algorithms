@@ -210,6 +210,21 @@ class Solution {
             }
         }
     }
+
+    isArraySorted(array) {
+        if (array.length >= 3) {
+            let midIdx = Math.floor(array.length / 2);
+            let leftOfMidIdx = midIdx - 1;
+            let rightOfMixIdx = midIdx + 1;
+            if ((array[midIdx] < array[leftOfMidIdx]) && (array[midIdx] < array[rightOfMixIdx])) {
+                return false;
+            } else {
+                return this.isArraySorted(array.slice(0, midIdx)) && this.isArraySorted(array.slice(rightOfMixIdx, array.length))
+            }
+        } else {
+            return true;
+        }
+    }
 }
 
 module.exports = Solution;
