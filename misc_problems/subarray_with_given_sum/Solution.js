@@ -19,7 +19,7 @@ class Solution {
             else {
                 result.found = true;
                 result.startIndex = leftPointer;
-                result.endIndex = rightPointer;
+                result.endIndex = rightPointer -1;
                 break;
             }
         }
