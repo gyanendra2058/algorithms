@@ -9,4 +9,4 @@ b. Run tests: npm run test
 
 c. Test coverage report location: ~/coverage/lcov-report/index.html
 
-d. Debug the tests and code via VSCode launch.json
+d. Debug the tests and code via VSCode launch.json 
