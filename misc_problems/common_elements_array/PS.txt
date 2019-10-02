@@ -1,0 +1,7 @@
+Given three increasingly sorted arrays A, B, C of sizes N1, N2, and N3 respectively, you need to print all common elements in these arrays.
+
+[1, 5, 10, 20, 40, 80]
+[6, 7, 20, 80, 100]
+[3, 4, 15, 20, 30, 70, 80, 120]
+
+[20, 80]

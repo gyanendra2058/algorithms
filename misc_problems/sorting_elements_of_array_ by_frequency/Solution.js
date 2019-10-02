@@ -19,7 +19,6 @@ class Solution {
             sortedArray = sortedArray.concat(tempArray);
         })
 
-        console.log(sortedArray);
         return sortedArray;
     }
 }
