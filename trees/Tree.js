@@ -25,25 +25,37 @@ class Tree {
     }
 
     // Uses a Depth-First Traversal
-     traverse(parentNode = this.rootNode) {
-        if(!parentNode.leftChild && !parentNode.rightChild) {
-            return parentNode.value + '-';
-        } else {  
-            return this.traverse(parentNode.leftChild) + '-' +this.traverse(parentNode.rightChild);
+    traverse(node) {
+        // base case 1
+        if (typeof node === 'undefined') {
+            return '';
+        }
+        else if (this.isLeafNode(node)) {
+            return node.value + '-';
+        } else if (this.hasChildren(node)) {
+            return this.traverse(node.leftChild) + node.value + '-' +this.traverse(node.rightChild);
         }
     }
 
-    contains(searchValue) {}
+    isLeafNode(node) {
+        return !node.leftChild && !node.rightChild;
+    }
 
-    static size(tree) {}
+    hasChildren(node) {
+        return node.leftChild || node.rightChild;
+    }
 
-    static find(tree, value) {}
+    contains(searchValue) { }
 
-    insert(parentTree, value) {}
+    static size(tree) { }
 
-    remove(value) {}
+    static find(tree, value) { }
 
-    reorder(node1, node2) {}
+    insert(parentTree, value) { }
+
+    remove(value) { }
+
+    reorder(node1, node2) { }
 }
 
 module.exports = Tree;
