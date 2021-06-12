@@ -15,7 +15,7 @@ class Solution {
         for (let [key, value] of indexValueMap) {
             const operand1Key = key;
             const operand2Key = target - key;
-            if (operand1Key !== operand2Key) {
+            if (indexValueMap.has(operand2Key) && operand1Key !== operand2Key) {
                 result.push(value, indexValueMap.get(target - key));
                 break;
             }
